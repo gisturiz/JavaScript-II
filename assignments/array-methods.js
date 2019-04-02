@@ -56,6 +56,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
 for (let i = 0; i < runners.length; i++) {
     fullName.push(runners[i].first_name + " " + runners[i].last_name);
 }
@@ -63,10 +64,12 @@ console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
-for (let i = 0; i < runners.length; i++) {
-    allCaps.push(runners[i].first_name.toUpperCase());
-}
+// let allCaps = [];
+
+const allCaps = runners.map(function(currentValue){
+  return currentValue.first_name.toUpperCase();
+ });
+
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -93,8 +96,29 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - Company and Emails
+let companyList = [];
+for (let i = 0; i < runners.length; i++) {
+    companyList.push(runners[i].company_name + " " + runners[i].email);
+}
+console.log(companyList);
 
-// Problem 2
+// Problem 2 - Small Shirts by ID
 
-// Problem 3
+let smallShirts = [];
+
+for (let i = 0; i < runners.length; i++) {
+    if (runners[i].shirt_size === "L") {
+        smallShirts.push(runners[i].id);
+    }
+}
+
+console.log(smallShirts);
+
+// Problem 3 Lowecase Lastname
+
+const allLower = runners.map(function(currentValue){
+  return currentValue.last_name.toLowerCase();
+ });
+
+console.log(allLower); 
