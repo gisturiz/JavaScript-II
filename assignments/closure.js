@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function airplane() {
+  const plane = "airplane";
+  console.log(`I'm on a ${plane}`);
+
+  function area() {
+    const seating = "first class";
+    console.log(`I'm on a ${plane}`);
+    console.log(`I'm seated in ${seating}`);
+  }
+  area();
+}
+airplane();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
